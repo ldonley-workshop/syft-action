@@ -1,0 +1,17 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: action
+name: syft-scan
+inputs:
+  image_location:
+    required: true
+  image_tag:
+    required: true
+runs:
+  using: composite
+  steps:
+    - id: run-scanner
+      name: syft-scan
+      uses: docker://ldonleycb/syft-runner:latest
+      shell: bash
+      run: |
+        syft ${{ inputs.image_location }}:${{ inputs.image_tag }}

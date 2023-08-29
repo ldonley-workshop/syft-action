@@ -1,0 +1,24 @@
+:toc: macro
+:toclevels: 2
+= CloudBees action: Syft scan
+
+toc::[]
+
+== Overview
+
+Use this action to perform a Syft scan.
+
+== Usage
+
+In your `yaml` file, add:
+
+[source,yaml]
+----
+
+      - name: Scan with Jfrog-xray
+        uses: ldonley-workshop/syft-action@v0
+        with:
+          image_location: "container image"
+          image_tag: "image tag"
+----
+
