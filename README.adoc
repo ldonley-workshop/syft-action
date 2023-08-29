@@ -15,8 +15,8 @@ In your `yaml` file, add:
 [source,yaml]
 ----
 
-      - name: Scan with Jfrog-xray
-        uses: ldonley-workshop/syft-action@v0
+      - name: Scan with Syft
+        uses: ldonley-workshop/syft-action@v1
         with:
           image_location: "container image"
           image_tag: "image tag"
